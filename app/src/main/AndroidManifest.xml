@@ -25,6 +25,10 @@
         <activity
             android:name=".activitys.superTextView.SuperTextViewActivity"
             android:screenOrientation="portrait" />
+        <!--SuperTextView-->
+        <activity
+            android:name=".activitys.superTextViewDemo.SuperTextViewDemoActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activitys.superTextView.Type0Activity"
             android:screenOrientation="portrait" />

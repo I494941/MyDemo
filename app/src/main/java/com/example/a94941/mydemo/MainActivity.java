@@ -7,6 +7,7 @@ import com.example.a94941.mydemo.activitys.colorViewDemo.ColorViewDemoActivity;
 import com.example.a94941.mydemo.activitys.dropDownMenu.DropDownMenuActivity;
 import com.example.a94941.mydemo.activitys.fourLevelLinkage.FourLevelLinkageActivity;
 import com.example.a94941.mydemo.activitys.superTextView.SuperTextViewActivity;
+import com.example.a94941.mydemo.activitys.superTextViewDemo.SuperTextViewDemoActivity;
 import com.example.a94941.mydemo.activitys.viewPagerCards.ViewPagerCardsActivity;
 import com.example.a94941.mydemo.base.BaseAppManager;
 import com.example.a94941.mydemo.base.BaseToolbarActivity;
@@ -32,6 +33,10 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void superTextView(View view) {
         readyGo(SuperTextViewActivity.class);
+    }
+
+    public void superTextViewDemo(View view) {
+        readyGo(SuperTextViewDemoActivity.class);
     }
 
     public void viewPagerCards(View view) {
