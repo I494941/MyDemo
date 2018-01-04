@@ -8,6 +8,7 @@ import com.example.a94941.mydemo.activitys.dropDownMenu.DropDownMenuActivity;
 import com.example.a94941.mydemo.activitys.fourLevelLinkage.FourLevelLinkageActivity;
 import com.example.a94941.mydemo.activitys.superTextView.SuperTextViewActivity;
 import com.example.a94941.mydemo.activitys.superTextViewDemo.SuperTextViewDemoActivity;
+import com.example.a94941.mydemo.activitys.tempControlView.TempControlViewActivity;
 import com.example.a94941.mydemo.activitys.viewPagerCards.ViewPagerCardsActivity;
 import com.example.a94941.mydemo.base.BaseAppManager;
 import com.example.a94941.mydemo.base.BaseToolbarActivity;
@@ -49,6 +50,10 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void fourLevelLinkage(View view) {
         readyGo(FourLevelLinkageActivity.class);
+    }
+
+    public void tempControlView(View view) {
+        readyGo(TempControlViewActivity.class);
     }
 
     private long firstTime = 0;

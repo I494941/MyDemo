@@ -44,5 +44,9 @@
         <activity
             android:name=".activitys.fourLevelLinkage.FourLevelLinkageActivity"
             android:screenOrientation="portrait" />
+        <!--TempControlView-->
+        <activity
+            android:name=".activitys.tempControlView.TempControlViewActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>
