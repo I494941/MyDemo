@@ -1,8 +1,12 @@
 package com.example.a94941.mydemo.app;
 
 import android.app.Application;
+import android.app.Service;
 import android.content.Context;
+import android.os.Vibrator;
 
+import com.baidu.location.service.LocationService;
+import com.baidu.mapapi.SDKInitializer;
 import com.example.a94941.mydemo.R;
 import com.scwang.smartrefresh.header.WaveSwipeHeader;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -19,7 +23,10 @@ import com.scwang.smartrefresh.layout.footer.BallPulseFooter;
  */
 
 public class MyApplication extends Application {
+
     private static Context appContext;
+    public LocationService locationService;
+    public Vibrator        mVibrator;
 
     @Override
     public void onCreate() {
@@ -48,6 +55,13 @@ public class MyApplication extends Application {
                 return new BallPulseFooter(context).setSpinnerStyle(SpinnerStyle.Scale); //设置 Footer 为 球脉冲
             }
         });
+
+        /***
+         * 初始化定位sdk，建议在Application中创建
+         */
+        locationService = new LocationService(getApplicationContext());
+        mVibrator = (Vibrator) getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
+        SDKInitializer.initialize(getApplicationContext());
     }
 
     /*private void initPublicKey() {

@@ -103,6 +103,17 @@
                 android:text="TempControlView"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_btn_bg"
+                android:onClick="baiduDemo"
+                android:padding="10dp"
+                android:text="百度地图定位"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

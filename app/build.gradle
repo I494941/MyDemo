@@ -23,6 +23,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    //百度地图添加
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
@@ -87,4 +93,6 @@ dependencies {
     compile 'com.android.support:cardview-v7:26.1.0'
     /*DropDownMenu*/
     compile 'com.github.dongjunkun:DropDownMenu:1.0.4'
+    /*百度地图*/
+    compile files('libs/BaiduLBS_Android.jar')
 }

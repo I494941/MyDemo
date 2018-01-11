@@ -3,6 +3,7 @@ package com.example.a94941.mydemo;
 import android.view.KeyEvent;
 import android.view.View;
 
+import com.example.a94941.mydemo.activitys.baiduDemo.BaiduDemoActivity;
 import com.example.a94941.mydemo.activitys.colorViewDemo.ColorViewDemoActivity;
 import com.example.a94941.mydemo.activitys.dropDownMenu.DropDownMenuActivity;
 import com.example.a94941.mydemo.activitys.fourLevelLinkage.FourLevelLinkageActivity;
@@ -54,6 +55,10 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void tempControlView(View view) {
         readyGo(TempControlViewActivity.class);
+    }
+
+    public void baiduDemo(View view) {
+        readyGo(BaiduDemoActivity.class);
     }
 
     private long firstTime = 0;
