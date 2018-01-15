@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.a94941.mydemo">
 
+    <!--百度地图-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -15,6 +16,15 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!--读写-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+
+    <!--蓝牙-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:name=".app.MyApplication"
@@ -76,5 +86,17 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="kSiWCtFurgQ3VYWMHvDMaOv0qBSCERxG" />  <!-- http://lbsyun.baidu.com/apiconsole/key -->
+        <!--百度地图:Handler+基础定位-->
+        <activity
+            android:name=".activitys.baiduDemo.LocationActivity"
+            android:screenOrientation="portrait" />
+        <!--百度地图:连续定位-->
+        <activity
+            android:name=".activitys.baiduDemo.LocationFilterActivity"
+            android:screenOrientation="portrait" />
+        <!--蓝牙-->
+        <activity
+            android:name=".activitys.bluetoothDemo.BluetoothDemoActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

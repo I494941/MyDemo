@@ -4,6 +4,7 @@ import android.view.KeyEvent;
 import android.view.View;
 
 import com.example.a94941.mydemo.activitys.baiduDemo.BaiduDemoActivity;
+import com.example.a94941.mydemo.activitys.bluetoothDemo.BluetoothDemoActivity;
 import com.example.a94941.mydemo.activitys.colorViewDemo.ColorViewDemoActivity;
 import com.example.a94941.mydemo.activitys.dropDownMenu.DropDownMenuActivity;
 import com.example.a94941.mydemo.activitys.fourLevelLinkage.FourLevelLinkageActivity;
@@ -59,6 +60,10 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void baiduDemo(View view) {
         readyGo(BaiduDemoActivity.class);
+    }
+
+    public void bluetoothDemo(View view) {
+        readyGo(BluetoothDemoActivity.class);
     }
 
     private long firstTime = 0;
