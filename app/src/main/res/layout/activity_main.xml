@@ -125,6 +125,17 @@
                 android:text="蓝牙搜索"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_btn_bg"
+                android:onClick="scanDemo"
+                android:padding="10dp"
+                android:text="@string/saoyisao"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -10,6 +10,7 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -159,7 +160,7 @@ public class BluetoothDemoActivity extends BaseToolbarActivity {
         //判断系统版本
         if (Build.VERSION.SDK_INT >= 23) {
             //检测当前app是否拥有某个权限
-            int checkCallPhonePermission = ActivityCompat.checkSelfPermission(this,
+            int checkCallPhonePermission = ContextCompat.checkSelfPermission(this,
                     Manifest.permission.ACCESS_COARSE_LOCATION);
             //判断这个权限是否已经授权过
             if (checkCallPhonePermission != PackageManager.PERMISSION_GRANTED) {

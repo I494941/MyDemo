@@ -7,4 +7,11 @@
     <string name="title_4">Ugly card</string>
 
     <string name="text_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam eget ligula eu lectus lobortis condimentum.</string>
+
+    <string name="shouye">首页</string>
+
+
+    <string name="zxing">zxing</string>
+    <string name="saoyisao">扫一扫</string>
+    <string name="erweima">二维码</string>
 </resources>

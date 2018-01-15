@@ -12,6 +12,7 @@ import com.example.a94941.mydemo.activitys.superTextView.SuperTextViewActivity;
 import com.example.a94941.mydemo.activitys.superTextViewDemo.SuperTextViewDemoActivity;
 import com.example.a94941.mydemo.activitys.tempControlView.TempControlViewActivity;
 import com.example.a94941.mydemo.activitys.viewPagerCards.ViewPagerCardsActivity;
+import com.example.a94941.mydemo.activitys.zxingDemo.ScanActivity;
 import com.example.a94941.mydemo.base.BaseAppManager;
 import com.example.a94941.mydemo.base.BaseToolbarActivity;
 import com.example.a94941.mydemo.utils.ToastUtils;
@@ -27,7 +28,7 @@ public class MainActivity extends BaseToolbarActivity {
     protected void initViewsAndEvents() {
         //隐藏toolbar返回按钮
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        mTvTitle.setText("首页");
+        mTvTitle.setText(R.string.shouye);
     }
 
     public void colorViewDemo(View view) {
@@ -64,6 +65,10 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void bluetoothDemo(View view) {
         readyGo(BluetoothDemoActivity.class);
+    }
+
+    public void scanDemo(View view) {
+        readyGo(ScanActivity.class);
     }
 
     private long firstTime = 0;

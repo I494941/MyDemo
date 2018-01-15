@@ -95,4 +95,6 @@ dependencies {
     compile 'com.github.dongjunkun:DropDownMenu:1.0.4'
     /*百度地图*/
     compile files('libs/BaiduLBS_Android.jar')
+    /*zxing*/
+    compile files('libs/zxing.jar')
 }
