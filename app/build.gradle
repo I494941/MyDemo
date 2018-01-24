@@ -23,7 +23,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    //百度地图添加
+    //百度地图添加,so文件
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
@@ -97,4 +97,6 @@ dependencies {
     compile files('libs/BaiduLBS_Android.jar')
     /*zxing*/
     compile files('libs/zxing.jar')
+    /*华为推送*/
+    compile 'com.huawei.android.hms:push:2.5.2.300'
 }

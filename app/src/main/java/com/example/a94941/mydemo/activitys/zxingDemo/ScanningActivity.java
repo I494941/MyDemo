@@ -92,24 +92,24 @@ public class ScanningActivity extends BaseToolbarActivity implements Callback, V
     private void initView() {
         CameraManager.init(getApplication());
 
-        final int sdk = Build.VERSION.SDK_INT;
-        Window window = ScanningActivity.this.getWindow();
-        WindowManager.LayoutParams params = window.getAttributes();
-
-        if (sdk >= Build.VERSION_CODES.KITKAT) {
-            int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-            // 设置透明状态栏
-            if ((params.flags & bits) == 0) {
-                params.flags |= bits;
-                window.setAttributes(params);
-            }
-
-            setTranslucentStatus(ScanningActivity.this, true);
-        }
-
-        SystemBarTintManager tintManager = new SystemBarTintManager(ScanningActivity.this);
-
-        tintManager.setStatusBarTintEnabled(true);
+//        final int sdk = Build.VERSION.SDK_INT;
+//        Window window = ScanningActivity.this.getWindow();
+//        WindowManager.LayoutParams params = window.getAttributes();
+//
+//        if (sdk >= Build.VERSION_CODES.KITKAT) {
+//            int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+//            // 设置透明状态栏
+//            if ((params.flags & bits) == 0) {
+//                params.flags |= bits;
+//                window.setAttributes(params);
+//            }
+//
+//            setTranslucentStatus(ScanningActivity.this, true);
+//        }
+//
+//        SystemBarTintManager tintManager = new SystemBarTintManager(ScanningActivity.this);
+//
+//        tintManager.setStatusBarTintEnabled(true);
 
         viewfinderView = findViewById(R.id.viewfinder_view);
         function_btn = findViewById(R.id.function_btn);
