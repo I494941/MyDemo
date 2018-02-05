@@ -1,11 +1,13 @@
 package com.example.a94941.mydemo;
 
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 
 import com.example.a94941.mydemo.activitys.baiduDemo.BaiduDemoActivity;
 import com.example.a94941.mydemo.activitys.bluetoothDemo.BluetoothDemoActivity;
 import com.example.a94941.mydemo.activitys.colorViewDemo.ColorViewDemoActivity;
+import com.example.a94941.mydemo.activitys.dateDemo.DateActivity;
 import com.example.a94941.mydemo.activitys.dropDownMenu.DropDownMenuActivity;
 import com.example.a94941.mydemo.activitys.fourLevelLinkage.FourLevelLinkageActivity;
 import com.example.a94941.mydemo.activitys.myView.MyViewActivity;
@@ -18,6 +20,9 @@ import com.example.a94941.mydemo.base.BaseAppManager;
 import com.example.a94941.mydemo.base.BaseToolbarActivity;
 import com.example.a94941.mydemo.utils.LogUtils;
 import com.example.a94941.mydemo.utils.ToastUtils;
+import com.tencent.android.tpush.XGIOperateCallback;
+import com.tencent.android.tpush.XGPushConfig;
+import com.tencent.android.tpush.XGPushManager;
 
 public class MainActivity extends BaseToolbarActivity {
 
@@ -33,6 +38,9 @@ public class MainActivity extends BaseToolbarActivity {
         mTvTitle.setText(R.string.shouye);
 
         LogUtils.e("12121212获取手机品牌", android.os.Build.BRAND);
+
+        //        //信鸽推送
+        //        initXG();
     }
 
     public void colorViewDemo(View view) {
@@ -77,6 +85,32 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void myViewDemo(View view) {
         readyGo(MyViewActivity.class);
+    }
+
+    public void dateDemo(View view) {
+        readyGo(DateActivity.class);
+    }
+
+    private void initXG() {
+        XGPushConfig.enableDebug(this, true);
+
+        XGPushManager.registerPush(this, new XGIOperateCallback() {
+            @Override
+            public void onSuccess(Object data, int flag) {
+                //token在设备卸载重装的时候有可能会变
+                Log.d("TPush", "注册成功，设备token为：" + data);
+            }
+
+            @Override
+            public void onFail(Object data, int errCode, String msg) {
+                Log.d("TPush", "注册失败，错误码：" + errCode + ",错误信息：" + msg);
+            }
+        });
+
+        //        XGPushManager.bindAccount(getApplicationContext(), "XINGE");
+        XGPushManager.bindAccount(getApplicationContext(), "XINGE1");
+
+
     }
 
     private long firstTime = 0;

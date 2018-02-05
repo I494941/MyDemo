@@ -24,9 +24,9 @@ import com.scwang.smartrefresh.layout.footer.BallPulseFooter;
 
 public class MyApplication extends Application {
 
-    private static Context appContext;
-    public LocationService locationService;
-    public Vibrator        mVibrator;
+    private static Context         appContext;
+    public         LocationService locationService;
+    public         Vibrator        mVibrator;
 
     @Override
     public void onCreate() {
@@ -42,7 +42,7 @@ public class MyApplication extends Application {
             @Override
             public RefreshHeader createRefreshHeader(Context context, RefreshLayout layout) {
                 layout.setPrimaryColorsId(R.color.light_blue, R.color.white);//全局设置主题颜色
-//                return new ClassicsHeader(context).setSpinnerStyle(SpinnerStyle.Translate);//指定为经典Header，默认是 贝塞尔雷达Header
+                //                return new ClassicsHeader(context).setSpinnerStyle(SpinnerStyle.Translate);//指定为经典Header，默认是 贝塞尔雷达Header
                 return new WaveSwipeHeader(context);
             }
         });
@@ -51,7 +51,7 @@ public class MyApplication extends Application {
             @Override
             public RefreshFooter createRefreshFooter(Context context, RefreshLayout layout) {
                 //指定为经典Footer，默认是 BallPulseFooter
-//                return new ClassicsFooter(context).setSpinnerStyle(SpinnerStyle.Translate);
+                //                return new ClassicsFooter(context).setSpinnerStyle(SpinnerStyle.Translate);
                 return new BallPulseFooter(context).setSpinnerStyle(SpinnerStyle.Scale); //设置 Footer 为 球脉冲
             }
         });

@@ -1,6 +1,7 @@
 package com.example.a94941.mydemo.activitys.zxingDemo;
 
 import android.graphics.Bitmap;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.example.a94941.mydemo.R;
@@ -9,6 +10,7 @@ import com.example.a94941.mydemo.utils.CommonUtils;
 import com.google.zxing.WriterException;
 
 import butterknife.BindView;
+import butterknife.OnLongClick;
 
 /**
  * Created by 94941 on 2018/1/3.
@@ -40,5 +42,16 @@ public class QRCodeActivity extends BaseToolbarActivity {
         } catch (WriterException e) {
             e.printStackTrace();
         }
+    }
+
+    @OnLongClick({R.id.iv})    //设置一个长按事件
+    public boolean onLongClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv:
+
+                new ZXingBitmapUtils(this).longClick(mIv);
+                break;
+        }
+        return true;
     }
 }

@@ -56,7 +56,7 @@ public class ScanActivity extends BaseToolbarActivity {
             if (checkCallPhonePermission != PackageManager.PERMISSION_GRANTED) {
 
                 ActivityCompat.requestPermissions(this, new String[]
-                        {Manifest.permission.ACCESS_COARSE_LOCATION,
+                        {Manifest.permission.CAMERA,
                                 Manifest.permission.READ_EXTERNAL_STORAGE,
                                 Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUESTCODE_ZXING);
             } else {

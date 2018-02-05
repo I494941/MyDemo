@@ -30,6 +30,14 @@
     <uses-permission android:name="android.permission.CAMERA" /><!--相机-->
     <uses-permission android:name="android.permission.VIBRATE" /><!--振动-->
 
+    <!-- 信鸽 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
     <application
         android:name=".app.MyApplication"
         android:allowBackup="true"
@@ -121,6 +129,24 @@
         <!--自定义view之审核进度-->
         <activity
             android:name=".activitys.myView.activity.AuditProgressActivity"
+            android:screenOrientation="portrait" />
+
+        <!--信鸽-->
+        <!-- YOUR_PACKAGE_PATH.CustomPushReceiver需要改为自己的Receiver： -->
+        <receiver
+            android:name=".receiver.MessageReceiver"
+            android:exported="true">
+            <intent-filter>
+                <!-- 接收消息透传 -->
+                <action android:name="com.tencent.android.tpush.action.PUSH_MESSAGE" />
+                <!-- 监听注册、反注册、设置/删除标签、通知被点击等处理结果 -->
+                <action android:name="com.tencent.android.tpush.action.FEEDBACK" />
+            </intent-filter>
+        </receiver>
+
+        <!--日期-->
+        <activity
+            android:name=".activitys.dateDemo.DateActivity"
             android:screenOrientation="portrait" />
     </application>
 </manifest>

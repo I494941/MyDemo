@@ -16,6 +16,17 @@ android {
                 includeCompileClasspath true
             }
         }
+
+        ndk {
+            //根据需要 自行选择添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                XG_ACCESS_ID : "2100276135",
+                XG_ACCESS_KEY: "A6Y8BM558TYN",
+        ]
     }
     buildTypes {
         release {
@@ -84,7 +95,6 @@ dependencies {
     /*SmartRefreshLayout*/
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
     compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3'//没有使用特殊Header，可以不加这行
-
     /*colorview*/
     compile 'com.wei.android.lib:colorview:1.2.0'
     /*SuperTextView*/
@@ -99,4 +109,8 @@ dependencies {
     compile files('libs/zxing.jar')
     /*华为推送*/
     compile 'com.huawei.android.hms:push:2.5.2.300'
+    /* 信鸽3.2.0 稳定版本*/
+    compile 'com.tencent.xinge:xinge:3.2.2.1-beta'/*信鸽jar*/
+    compile 'com.tencent.wup:wup:1.0.0.E-release'/*wup包*/
+    compile 'com.tencent.mid:mid:4.0.0-release'/*mid包*/
 }

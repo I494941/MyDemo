@@ -181,4 +181,9 @@
     <color name="result_view">#b0000000</color>
     <color name="viewfinder_mask">#60000000</color>
     <color name="possible_result_points">#c0ffff00</color>
+
+    <color name="activity_color">#00bbbf</color>
+    <color name="bg_color">#F4F4F4</color>
+    <color name="dgray">#444444</color>
+    <!--<color name="gray">#a0a0a0</color>-->
 </resources>

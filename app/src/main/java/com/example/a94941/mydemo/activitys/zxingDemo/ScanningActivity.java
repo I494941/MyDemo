@@ -1,6 +1,5 @@
 package com.example.a94941.mydemo.activitys.zxingDemo;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -11,7 +10,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
@@ -44,7 +42,6 @@ import com.google.zxing.NotFoundException;
 import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.io.IOException;
 import java.util.Hashtable;
@@ -92,24 +89,24 @@ public class ScanningActivity extends BaseToolbarActivity implements Callback, V
     private void initView() {
         CameraManager.init(getApplication());
 
-//        final int sdk = Build.VERSION.SDK_INT;
-//        Window window = ScanningActivity.this.getWindow();
-//        WindowManager.LayoutParams params = window.getAttributes();
-//
-//        if (sdk >= Build.VERSION_CODES.KITKAT) {
-//            int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-//            // 设置透明状态栏
-//            if ((params.flags & bits) == 0) {
-//                params.flags |= bits;
-//                window.setAttributes(params);
-//            }
-//
-//            setTranslucentStatus(ScanningActivity.this, true);
-//        }
-//
-//        SystemBarTintManager tintManager = new SystemBarTintManager(ScanningActivity.this);
-//
-//        tintManager.setStatusBarTintEnabled(true);
+        //        final int sdk = Build.VERSION.SDK_INT;
+        //        Window window = ScanningActivity.this.getWindow();
+        //        WindowManager.LayoutParams params = window.getAttributes();
+        //
+        //        if (sdk >= Build.VERSION_CODES.KITKAT) {
+        //            int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+        //            // 设置透明状态栏
+        //            if ((params.flags & bits) == 0) {
+        //                params.flags |= bits;
+        //                window.setAttributes(params);
+        //            }
+        //
+        //            setTranslucentStatus(ScanningActivity.this, true);
+        //        }
+        //
+        //        SystemBarTintManager tintManager = new SystemBarTintManager(ScanningActivity.this);
+        //
+        //        tintManager.setStatusBarTintEnabled(true);
 
         viewfinderView = findViewById(R.id.viewfinder_view);
         function_btn = findViewById(R.id.function_btn);
@@ -318,8 +315,8 @@ public class ScanningActivity extends BaseToolbarActivity implements Callback, V
         }
         // 处理扫描结果
         LogUtils.e("12121212", resultString);
-        finish();
         result_bitmap_iv.setImageBitmap(bitmap);
+        finish();
     }
 
     private void initCamera(SurfaceHolder surfaceHolder) {
