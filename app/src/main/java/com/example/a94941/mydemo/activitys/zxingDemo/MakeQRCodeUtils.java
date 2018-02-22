@@ -23,17 +23,17 @@ public class MakeQRCodeUtils {
 
     /**
      * 根据指定内容生成自定义宽高的二维码图片
-     *
+     * <p>
      * param logoBm
-     *            logo图标
+     * logo图标
      * param content
-     *            需要生成二维码的内容
+     * 需要生成二维码的内容
      * param width
-     *            二维码宽度
+     * 二维码宽度
      * param height
-     *            二维码高度
+     * 二维码高度
      * throws WriterException
-     *             生成二维码异常
+     * 生成二维码异常
      */
     public static Bitmap makeQRImage(Bitmap logoBmp, String content, int QR_WIDTH, int QR_HEIGHT) throws WriterException {
         try {
@@ -110,7 +110,7 @@ public class MakeQRCodeUtils {
                 Canvas canvas = new Canvas(bitmap);
                 canvas.drawBitmap(bitmap, 0, 0, null);
                 canvas.scale(scaleFactor, scaleFactor, QR_WIDTH / 2, QR_HEIGHT / 2);
-                canvas.drawBitmap(logoBmp, (QR_WIDTH - logoWidth) / 2, (QR_HEIGHT - logoHeight) /2, null);
+                canvas.drawBitmap(logoBmp, (QR_WIDTH - logoWidth) / 2, (QR_HEIGHT - logoHeight) / 2, null);
                 canvas.save(Canvas.ALL_SAVE_FLAG);
                 canvas.restore();
                 return bitmap;
@@ -124,34 +124,33 @@ public class MakeQRCodeUtils {
 
         return null;
     }
+
     /**
      * 获取十六进制的颜色代码.例如  "#6E36B4" , For HTML ,
+     *
      * @return String
      */
-    public static String getRandColorCode(){
-        String r,g,b;
+    public static String getRandColorCode() {
+        String r, g, b;
         Random random = new Random();
         r = Integer.toHexString(random.nextInt(256)).toUpperCase();
         g = Integer.toHexString(random.nextInt(256)).toUpperCase();
         b = Integer.toHexString(random.nextInt(256)).toUpperCase();
 
-        r = r.length()==1 ? "0" + r : r ;
-        g = g.length()==1 ? "0" + g : g ;
-        b = b.length()==1 ? "0" + b : b ;
+        r = r.length() == 1 ? "0" + r : r;
+        g = g.length() == 1 ? "0" + g : g;
+        b = b.length() == 1 ? "0" + b : b;
 
-        return r+g+b;
+        return r + g + b;
     }
+
     /**
      * 根据指定内容生成自定义宽高的二维码图片
      *
-     * @param content
-     *            需要生成二维码的内容
-     * @param width
-     *            二维码宽度
-     * @param height
-     *            二维码高度
-     * @throws WriterException
-     *             生成二维码异常
+     * @param content 需要生成二维码的内容
+     * @param width   二维码宽度
+     * @param height  二维码高度
+     * @throws WriterException 生成二维码异常
      */
     public static Bitmap makeQRImage(String content, int width, int height) throws WriterException {
 
@@ -175,26 +174,24 @@ public class MakeQRCodeUtils {
         bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
         return bitmap;
     }
+
     /**
      * 从资源文件中获取图片
      *
-     * @param context
-     *            上下文
-     * @param drawableId
-     *            资源文件id
+     * @param context    上下文
+     * @param drawableId 资源文件id
      * @return
      */
     public static Bitmap gainBitmap(Context context, int drawableId) {
         Bitmap bmp = BitmapFactory.decodeResource(context.getResources(), drawableId);
         return bmp;
     }
+
     /**
      * 在图片右下角添加水印
      *
-     * @param srcBMP
-     *            原图
-     * @param markBMP
-     *            水印图片
+     * @param srcBMP  原图
+     * @param markBMP 水印图片
      * @return 合成水印后的图片
      */
     public static Bitmap composeWatermark(Bitmap srcBMP, Bitmap markBMP) {
@@ -207,7 +204,7 @@ public class MakeQRCodeUtils {
         // 在 0，0坐标开始画入原图
         cv.drawBitmap(srcBMP, 0, 0, null);
         // 在原图的右下角画入水印
-        cv.drawBitmap(markBMP, srcBMP.getWidth() - markBMP.getWidth()*4/5, srcBMP.getHeight()*2/7 , null);
+        cv.drawBitmap(markBMP, srcBMP.getWidth() - markBMP.getWidth() * 4 / 5, srcBMP.getHeight() * 2 / 7, null);
         // 保存
         cv.save(Canvas.ALL_SAVE_FLAG);
         // 存储
@@ -215,11 +212,11 @@ public class MakeQRCodeUtils {
 
         return newb;
     }
+
     /**
      * 给二维码图片加背景
-     *
      */
-    public static Bitmap addBackground(Bitmap foreground, Bitmap background){
+    public static Bitmap addBackground(Bitmap foreground, Bitmap background) {
         int bgWidth = background.getWidth();
         int bgHeight = background.getHeight();
         int fgWidth = foreground.getWidth();
@@ -236,7 +233,7 @@ public class MakeQRCodeUtils {
 
     /**
      * 删除白边
-     * */
+     */
     private static BitMatrix deleteWhite(BitMatrix matrix) {
         int[] rec = matrix.getEnclosingRectangle();
         int resWidth = rec[2] + 1;

@@ -113,4 +113,17 @@ dependencies {
     compile 'com.tencent.xinge:xinge:3.2.2.1-beta'/*信鸽jar*/
     compile 'com.tencent.wup:wup:1.0.0.E-release'/*wup包*/
     compile 'com.tencent.mid:mid:4.0.0-release'/*mid包*/
+    /*单元测试*/
+//    testCompile "junit:junit:4.12"
+    testCompile "org.mockito:mockito-core:1.10.19"
+
+//    compile fileTree(dir: 'libs', include: ['*.jar'])
+//    testCompile "junit:junit:4.12"
+//    testCompile "org.assertj:assertj-core:1.7.0"
+//    testCompile "org.robolectric:robolectric:3.3.2"
+//    // PowerMock brings in the mockito dependency
+//    testCompile 'org.powermock:powermock-module-junit4:1.6.5'
+//    testCompile 'org.powermock:powermock-module-junit4-rule:1.6.5'
+//    testCompile 'org.powermock:powermock-api-mockito:1.6.5'
+//    testCompile 'org.powermock:powermock-classloading-xstream:1.6.5'
 }

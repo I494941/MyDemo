@@ -69,7 +69,7 @@ public abstract class BaseToolbarActivity extends BaseAppCompatActivity {
                 .show();
     }
 
-    protected  String getContent(){
+    protected String getContent() {
         return "";
     }
 }

@@ -1,6 +1,5 @@
 package com.example.a94941.mydemo.utils;
 
-import android.content.Context;
 import android.widget.Toast;
 
 import com.example.a94941.mydemo.app.MyApplication;

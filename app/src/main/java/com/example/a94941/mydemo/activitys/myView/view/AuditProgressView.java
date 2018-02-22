@@ -130,7 +130,7 @@ public class AuditProgressView extends View {
                 paint.setColor(Color.BLACK);
             }
             canvas.drawLine(2 * imageWidth / 3 + startX + i * (width - 2 * (imageWidth + imageWidth / 2)) / (progressCount - 1),
-                    startY, startX - 2 * imageWidth / 3 + (i + 1) * (width - 2 * (imageWidth + imageWidth / 2)) / (  - 1), startY, paint);
+                    startY, startX - 2 * imageWidth / 3 + (i + 1) * (width - 2 * (imageWidth + imageWidth / 2)) / (-1), startY, paint);
         }
     }
 

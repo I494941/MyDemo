@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pojo">
+        <item>全部</item>
+        <item>工作票</item>
+        <item>操作票</item>
+        <item>安全学习</item>
+        <item>操作学习</item>
+        <item>开会通知</item>
+    </string-array>
+</resources>

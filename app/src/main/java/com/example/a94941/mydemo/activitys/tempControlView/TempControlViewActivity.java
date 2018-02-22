@@ -1,9 +1,8 @@
 package com.example.a94941.mydemo.activitys.tempControlView;
 
-import android.widget.Toast;
-
 import com.example.a94941.mydemo.R;
 import com.example.a94941.mydemo.base.BaseToolbarActivity;
+import com.example.a94941.mydemo.utils.ToastUtils;
 
 import butterknife.BindView;
 
@@ -32,14 +31,16 @@ public class TempControlViewActivity extends BaseToolbarActivity {
         mTempControl.setOnTempChangeListener(new TempControlView.OnTempChangeListener() {
             @Override
             public void change(int temp) {
-                Toast.makeText(mContext, temp + "°", Toast.LENGTH_SHORT).show();
+                //                Toast.makeText(mContext, temp + "°", Toast.LENGTH_SHORT).show();
+                ToastUtils.showToast(temp + "°");
             }
         });
 
         mTempControl.setOnClickListener(new TempControlView.OnClickListener() {
             @Override
             public void onClick(int temp) {
-                Toast.makeText(mContext, temp + "°", Toast.LENGTH_SHORT).show();
+                //                Toast.makeText(mContext, temp + "°", Toast.LENGTH_SHORT).show();
+                ToastUtils.showToast(temp + "°");
             }
         });
     }

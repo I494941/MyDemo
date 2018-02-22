@@ -164,68 +164,68 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-          <TextView
-              android:id="@+id/tv_lunarday1"
-              android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:gravity="center"
-              android:padding="10dp"
-              android:textColor="@color/green" />
+            <TextView
+                android:id="@+id/tv_lunarday1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/green" />
 
-          <TextView
-              android:id="@+id/tv_lunarday2"
-              android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:gravity="center"
-              android:padding="10dp"
-              android:textColor="@color/green" />
+            <TextView
+                android:id="@+id/tv_lunarday2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/green" />
 
-          <TextView
-              android:id="@+id/tv_lunarday3"
-              android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:gravity="center"
-              android:padding="10dp"
-              android:textColor="@color/green" />
+            <TextView
+                android:id="@+id/tv_lunarday3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/green" />
 
-          <TextView
-              android:id="@+id/tv_lunarday4"
-              android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:gravity="center"
-              android:padding="10dp"
-              android:textColor="@color/green" />
+            <TextView
+                android:id="@+id/tv_lunarday4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/green" />
 
-          <TextView
-              android:id="@+id/tv_lunarday5"
-              android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:gravity="center"
-              android:padding="10dp"
-              android:textColor="@color/green" />
+            <TextView
+                android:id="@+id/tv_lunarday5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/green" />
 
-          <TextView
-              android:id="@+id/tv_lunarday6"
-              android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:gravity="center"
-              android:padding="10dp"
-              android:textColor="@color/green" />
+            <TextView
+                android:id="@+id/tv_lunarday6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/green" />
 
-          <TextView
-              android:id="@+id/tv_lunarday7"
-              android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:gravity="center"
-              android:padding="10dp"
-              android:textColor="@color/green" />
+            <TextView
+                android:id="@+id/tv_lunarday7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/green" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

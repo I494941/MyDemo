@@ -27,9 +27,10 @@ public class LevelListViewAdapter extends BaseAdapter {
     private int    selectedPos  = -1;
     private String selectedText = "";
     private ArrayList<Level> mData;
+
     public LevelListViewAdapter(Context context, ArrayList<Level> level) {
-        this.mContext=context;
-        this.mData=level;
+        this.mContext = context;
+        this.mData = level;
         onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,28 +42,33 @@ public class LevelListViewAdapter extends BaseAdapter {
             }
         };
     }
+
     @Override
     public int getCount() {
-        return mData==null?0:mData.size();
+        return mData == null ? 0 : mData.size();
     }
+
     @Override
     public Object getItem(int position) {
         return mData.get(position);
     }
+
     @Override
     public long getItemId(int position) {
         return position;
     }
+
     /**
      * 设置选中的position,但不通知刷新
      */
-    public void setSelectedPositionNoNotify(int pos,ArrayList<Level> level) {
+    public void setSelectedPositionNoNotify(int pos, ArrayList<Level> level) {
         selectedPos = pos;
         mData = level;
         if (mData != null && pos < mData.size()) {
             selectedText = mData.get(pos).getPlacename();
         }
     }
+
     /**
      * 设置选中的position,并通知刷新其它列表
      */
@@ -73,6 +79,7 @@ public class LevelListViewAdapter extends BaseAdapter {
             notifyDataSetChanged();
         }
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = View.inflate(mContext, R.layout.adapter_levellistview, null);
@@ -88,12 +95,14 @@ public class LevelListViewAdapter extends BaseAdapter {
         view.setOnClickListener(onClickListener);
         return view;
     }
+
     /**
      * 重新定义菜单选项单击接口
      */
     public interface OnItemClickListener {
         void onItemClick(View view, int position);
     }
+
     public void setOnItemClickListener(OnItemClickListener l) {
         mOnItemClickListener = l;
     }

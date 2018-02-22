@@ -31,7 +31,6 @@ public class ScanActivity extends BaseToolbarActivity {
     @Override
     protected void initViewsAndEvents() {
         mTvTitle.setText(R.string.zxing);
-
     }
 
     @OnClick({R.id.ll_scan, R.id.ll_qrcode})

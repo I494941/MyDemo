@@ -50,7 +50,7 @@ public class DateUtil {
         return dft.format(endDate);
     }
 
-    public static void getCurrentDate(){
+    public static void getCurrentDate() {
         Calendar c = Calendar.getInstance();
         c.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
     }

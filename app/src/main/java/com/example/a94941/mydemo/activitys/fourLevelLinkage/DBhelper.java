@@ -29,6 +29,7 @@ public class DBhelper {
 
     /**
      * 获取洲
+     *
      * @return
      */
     public ArrayList<Level> getContinent() {
@@ -37,22 +38,22 @@ public class DBhelper {
         ArrayList<Level> list = new ArrayList<Level>();
         try {
             String sql = "select * from Continent";
-            Cursor cursor = db.rawQuery(sql,null);
+            Cursor cursor = db.rawQuery(sql, null);
             cursor.moveToFirst();
-            while (!cursor.isLast()){
-                String placeid=cursor.getString(cursor.getColumnIndex("ContinentId"));
-                byte bytes[]=cursor.getBlob(2);
-                String placename=new String(bytes,"utf-8");
-                Level level=new Level();
+            while (!cursor.isLast()) {
+                String placeid = cursor.getString(cursor.getColumnIndex("ContinentId"));
+                byte bytes[] = cursor.getBlob(2);
+                String placename = new String(bytes, "utf-8");
+                Level level = new Level();
                 level.setPlacename(placename);
                 level.setPlaceid(placeid);
                 list.add(level);
                 cursor.moveToNext();
             }
-            String placeid=cursor.getString(cursor.getColumnIndex("ContinentId"));
-            byte bytes[]=cursor.getBlob(2);
-            String placename=new String(bytes,"utf-8");
-            Level level=new Level();
+            String placeid = cursor.getString(cursor.getColumnIndex("ContinentId"));
+            byte bytes[] = cursor.getBlob(2);
+            String placename = new String(bytes, "utf-8");
+            Level level = new Level();
             level.setPlacename(placename);
             level.setPlaceid(placeid);
             list.add(level);
@@ -67,6 +68,7 @@ public class DBhelper {
 
     /**
      * 获取国
+     *
      * @param placetoid
      * @return
      */
@@ -75,24 +77,24 @@ public class DBhelper {
         db = dbm.getDatabase();
         ArrayList<Level> list = new ArrayList<Level>();
         try {
-            String sql = "select * from Country where ContinentId='"+placetoid+"'";
-            Cursor cursor = db.rawQuery(sql,null);
+            String sql = "select * from Country where ContinentId='" + placetoid + "'";
+            Cursor cursor = db.rawQuery(sql, null);
             cursor.moveToFirst();
-            while (!cursor.isLast()){
-                String placeid=cursor.getString(cursor.getColumnIndex("CountryId"));
-                byte bytes[]=cursor.getBlob(2);
-                String placename=new String(bytes,"utf-8");
-                Level level=new Level();
+            while (!cursor.isLast()) {
+                String placeid = cursor.getString(cursor.getColumnIndex("CountryId"));
+                byte bytes[] = cursor.getBlob(2);
+                String placename = new String(bytes, "utf-8");
+                Level level = new Level();
                 level.setPlacename(placename);
                 level.setPlaceid(placeid);
                 level.setPlacetoid(placetoid);
                 list.add(level);
                 cursor.moveToNext();
             }
-            String placeid=cursor.getString(cursor.getColumnIndex("CountryId"));
-            byte bytes[]=cursor.getBlob(2);
-            String placename=new String(bytes,"utf-8");
-            Level level=new Level();
+            String placeid = cursor.getString(cursor.getColumnIndex("CountryId"));
+            byte bytes[] = cursor.getBlob(2);
+            String placename = new String(bytes, "utf-8");
+            Level level = new Level();
             level.setPlacename(placename);
             level.setPlaceid(placeid);
             level.setPlacetoid(placetoid);
@@ -108,6 +110,7 @@ public class DBhelper {
 
     /**
      * 获取省
+     *
      * @param placetoid
      * @return
      */
@@ -116,8 +119,8 @@ public class DBhelper {
         db = dbm.getDatabase();
         ArrayList<Level> list = new ArrayList<Level>();
         try {
-            String sql = "select * from Province where CountryId='"+placetoid+"'";
-            Cursor cursor = db.rawQuery(sql,null);
+            String sql = "select * from Province where CountryId='" + placetoid + "'";
+            Cursor cursor = db.rawQuery(sql, null);
             if (cursor.moveToFirst()) {
                 while (!cursor.isLast()) {
                     String placeid = cursor.getString(cursor.getColumnIndex("ProvinceId"));
@@ -148,6 +151,7 @@ public class DBhelper {
 
     /**
      * 获取市
+     *
      * @param placetoid
      * @return
      */
@@ -156,8 +160,8 @@ public class DBhelper {
         db = dbm.getDatabase();
         ArrayList<Level> list = new ArrayList<Level>();
         try {
-            String sql = "select * from City where ProvinceId='"+placetoid+"'";
-            Cursor cursor = db.rawQuery(sql,null);
+            String sql = "select * from City where ProvinceId='" + placetoid + "'";
+            Cursor cursor = db.rawQuery(sql, null);
             if (cursor.moveToFirst()) {
                 while (!cursor.isLast()) {
                     String placeid = cursor.getString(cursor.getColumnIndex("CityId"));
@@ -188,6 +192,7 @@ public class DBhelper {
 
     /**
      * 关键字获取
+     *
      * @param keyword
      * @param table
      * @param field
@@ -199,9 +204,9 @@ public class DBhelper {
         dbm.openDatabase();
         db = dbm.getDatabase();
         ArrayList<Level> list = new ArrayList<Level>();
-        try{
-            String Continetsql = "select * from "+table+" where "+field+" like '%"+keyword+"%'";
-            Cursor continentCursor = db.rawQuery(Continetsql,null);
+        try {
+            String Continetsql = "select * from " + table + " where " + field + " like '%" + keyword + "%'";
+            Cursor continentCursor = db.rawQuery(Continetsql, null);
             if (continentCursor.moveToFirst()) {
                 while (!continentCursor.isLast()) {
                     String placeid = continentCursor.getString(continentCursor.getColumnIndex(fieldId));
@@ -226,9 +231,9 @@ public class DBhelper {
                 list.add(level);
             }
             continentCursor.close();
-        }catch(Exception e){
+        } catch (Exception e) {
             return null;
-        }finally{
+        } finally {
             dbm.closeDatabase();
             db.close();
         }
@@ -237,6 +242,7 @@ public class DBhelper {
 
     /**
      * 根据toId获取所属省
+     *
      * @param placetoid
      * @param table
      * @param fieldId
@@ -245,10 +251,10 @@ public class DBhelper {
     public String getTheir(String placetoid, String table, String fieldId) {
         dbm.openDatabase();
         db = dbm.getDatabase();
-        String theirName=null;
+        String theirName = null;
         try {
-            String sql = "select * from "+table+" where "+fieldId+"='"+placetoid+"'";
-            Cursor cursor = db.rawQuery(sql,null);
+            String sql = "select * from " + table + " where " + fieldId + "='" + placetoid + "'";
+            Cursor cursor = db.rawQuery(sql, null);
             if (cursor.moveToFirst()) {
                 String placeid = cursor.getString(cursor.getColumnIndex(fieldId));
                 byte bytes[] = cursor.getBlob(2);

@@ -23,14 +23,13 @@ import java.util.HashSet;
  * This view is overlaid on top of the camera preview. It adds the viewfinder
  * rectangle and partial transparency outside it, as well as the laser scanner
  * animation and result points.
- *
  */
 public final class ViewfinderView extends View {
     /**
      * 刷新界面的时间
      */
     private static final long ANIMATION_DELAY = 10L;
-    private static final int OPAQUE = 0xFF;
+    private static final int  OPAQUE          = 0xFF;
 
     /**
      * 四个绿色边角对应的长度
@@ -63,7 +62,7 @@ public final class ViewfinderView extends View {
     /**
      * 字体大小
      */
-    private static final int TEXT_SIZE = 16;
+    private static final int TEXT_SIZE        = 16;
     /**
      * 字体距离扫描框下面的距离
      */
@@ -235,8 +234,7 @@ public final class ViewfinderView extends View {
      * Draw a bitmap with the result points highlighted instead of the live
      * scanning display.
      *
-     * @param barcode
-     *            An image of the decoded barcode.
+     * @param barcode An image of the decoded barcode.
      */
     public void drawResultBitmap(Bitmap barcode) {
         resultBitmap = barcode;

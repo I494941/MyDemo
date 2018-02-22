@@ -4,7 +4,7 @@ import android.util.Log;
 
 public class LogUtils {
     //日志开关，在应用测试完毕发布版本之前要置为false
-   private static boolean isDebug = true;
+    private static boolean isDebug = true;
 
     public static void d(String tag, String msg) {
         if (isDebug) {

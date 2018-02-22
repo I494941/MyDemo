@@ -1,6 +1,7 @@
 package com.example.a94941.mydemo.activitys.dateDemo;
 
 import android.graphics.Color;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.a94941.mydemo.R;
@@ -51,6 +52,8 @@ public class DateActivity extends BaseToolbarActivity {
 
     @Override
     protected void initViewsAndEvents() {
+        mTvTitle.setText("日期");
+        mIvRight.setVisibility(View.VISIBLE);
 
         if (1 == DateUtils.getWeek(0)) {
             mTvDay1.setBackgroundColor(Color.BLUE);
@@ -172,5 +175,10 @@ public class DateActivity extends BaseToolbarActivity {
             mTvLunarday5.setText(DateUtils.getLunarDay(-2) + "");
             mTvLunarday6.setText(DateUtils.getLunarDay(-1) + "");
         }
+    }
+
+    @Override
+    protected String getContent() {
+        return "本周日期，包含阴历";
     }
 }

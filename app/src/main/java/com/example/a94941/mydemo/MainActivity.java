@@ -4,6 +4,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 
+import com.example.a94941.mydemo.activitys.JUnit4Activity.JUnit4Activity;
 import com.example.a94941.mydemo.activitys.baiduDemo.BaiduDemoActivity;
 import com.example.a94941.mydemo.activitys.bluetoothDemo.BluetoothDemoActivity;
 import com.example.a94941.mydemo.activitys.colorViewDemo.ColorViewDemoActivity;
@@ -11,6 +12,7 @@ import com.example.a94941.mydemo.activitys.dateDemo.DateActivity;
 import com.example.a94941.mydemo.activitys.dropDownMenu.DropDownMenuActivity;
 import com.example.a94941.mydemo.activitys.fourLevelLinkage.FourLevelLinkageActivity;
 import com.example.a94941.mydemo.activitys.myView.MyViewActivity;
+import com.example.a94941.mydemo.activitys.spinnerDemo.SpinnerActivity;
 import com.example.a94941.mydemo.activitys.superTextView.SuperTextViewActivity;
 import com.example.a94941.mydemo.activitys.superTextViewDemo.SuperTextViewDemoActivity;
 import com.example.a94941.mydemo.activitys.tempControlView.TempControlViewActivity;
@@ -89,6 +91,14 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void dateDemo(View view) {
         readyGo(DateActivity.class);
+    }
+
+    public void spinnerDemo(View view) {
+        readyGo(SpinnerActivity.class);
+    }
+
+    public void goJUnit4Activity(View view) {
+        readyGo(JUnit4Activity.class);
     }
 
     private void initXG() {

@@ -21,11 +21,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <SurfaceView
                 android:id="@+id/preview_view"
@@ -45,8 +45,8 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="10dp"
-                android:text="从相册获取"
                 android:background="@color/light_blue"
+                android:text="从相册获取"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 

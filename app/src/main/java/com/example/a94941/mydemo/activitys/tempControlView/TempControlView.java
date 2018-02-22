@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.a94941.mydemo.R;
+
 /**
  * Created by 94941 on 2018/1/3.
  */
@@ -43,19 +44,19 @@ public class TempControlView extends View {
     // 温度显示画笔
     private Paint tempPaint;
     // 文本提示
-    private String title = "最高温度设置";
+    private String title             = "最高温度设置";
     // 温度
-    private int temperature = 15;
+    private int    temperature       = 15;
     // 最低温度
-    private int minTemp = 15;
+    private int    minTemp           = 15;
     // 最高温度
-    private int maxTemp = 30;
+    private int    maxTemp           = 30;
     // 四格代表温度1度
-    private int angleRate = 4;
+    private int    angleRate         = 4;
     // 每格的角度
-    private float angleOne = (float) 270 / (maxTemp - minTemp) / angleRate;
+    private float  angleOne          = (float) 270 / (maxTemp - minTemp) / angleRate;
     // 按钮图片
-    private Bitmap buttonImage = BitmapFactory.decodeResource(getResources(),
+    private Bitmap buttonImage       = BitmapFactory.decodeResource(getResources(),
             R.mipmap.btn_rotate);
     // 按钮图片阴影
     private Bitmap buttonImageShadow = BitmapFactory.decodeResource(getResources(),
@@ -65,7 +66,7 @@ public class TempControlView extends View {
     // 温度改变监听
     private OnTempChangeListener onTempChangeListener;
     // 控件点击监听
-    private OnClickListener onClickListener;
+    private OnClickListener      onClickListener;
 
     // 以下为旋转按钮相关
 

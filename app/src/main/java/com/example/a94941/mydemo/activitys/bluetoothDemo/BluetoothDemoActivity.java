@@ -141,7 +141,7 @@ public class BluetoothDemoActivity extends BaseToolbarActivity {
                             ",timeStart:" + bean.timeStart +
                             ",timeEnd:" + bean.timeEnd;
 
-                    LogUtils.e("12121212bluetooth",bluetooth);
+                    LogUtils.e("12121212bluetooth", bluetooth);
 
                     FileUtils.writeFileToSDCard(bluetooth.getBytes(), null, fileName, true, true);
                 }

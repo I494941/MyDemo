@@ -148,5 +148,17 @@
         <activity
             android:name=".activitys.dateDemo.DateActivity"
             android:screenOrientation="portrait" />
+        <!--spinner-->
+        <activity
+            android:name=".activitys.spinnerDemo.SpinnerActivity"
+            android:screenOrientation="portrait" />
+        <!--RadioGroup-->
+        <activity
+            android:name=".activitys.spinnerDemo.RadioGroupActivity"
+            android:screenOrientation="portrait" />
+        <!--JUnit4-->
+        <activity
+            android:name=".activitys.JUnit4Activity.JUnit4Activity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

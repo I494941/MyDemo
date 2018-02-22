@@ -1,4 +1,4 @@
-    package com.example.a94941.mydemo.activitys.fourLevelLinkage;
+package com.example.a94941.mydemo.activitys.fourLevelLinkage;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -25,13 +25,13 @@ import java.io.InputStream;
 public class DBManager {
     private final       int    BUFFER_SIZE  = 1024;
     public static final String DB_NAME      = "level.db3";
-//    public static final String PACKAGE_NAME = "com.johnny.fourlevellinkage";
+    //    public static final String PACKAGE_NAME = "com.johnny.fourlevellinkage";
     public static final String PACKAGE_NAME = "com.example.a94941.mydemo";
     public static final String DB_PATH      = "/data"
-            + Environment.getDataDirectory().getAbsolutePath() + "/"+ PACKAGE_NAME;
+            + Environment.getDataDirectory().getAbsolutePath() + "/" + PACKAGE_NAME;
     private SQLiteDatabase database;
     private Context        context;
-    private File file =null;
+    private File file = null;
 
     DBManager(Context context) {
         this.context = context;
@@ -41,7 +41,8 @@ public class DBManager {
 
         this.database = this.openDatabase(DB_PATH + "/" + DB_NAME);
     }
-    public SQLiteDatabase getDatabase(){
+
+    public SQLiteDatabase getDatabase() {
         return this.database;
     }
 
@@ -50,34 +51,35 @@ public class DBManager {
             file = new File(dbfile);
             if (!file.exists()) {
                 InputStream is = context.getResources().openRawResource(R.raw.level);
-                if(is!=null){
-                }else{
+                if (is != null) {
+                } else {
                 }
                 FileOutputStream fos = new FileOutputStream(dbfile);
-                if(is!=null){
-                }else{
+                if (is != null) {
+                } else {
                 }
                 byte[] buffer = new byte[BUFFER_SIZE];
                 int count = 0;
-                while ((count =is.read(buffer)) > 0) {
+                while ((count = is.read(buffer)) > 0) {
                     fos.write(buffer, 0, count);
                     fos.flush();
                 }
                 fos.close();
                 is.close();
             }
-            database = SQLiteDatabase.openOrCreateDatabase(dbfile,null);
+            database = SQLiteDatabase.openOrCreateDatabase(dbfile, null);
             return database;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (Exception e){
+        } catch (Exception e) {
         }
         return null;
     }
+
     public void closeDatabase() {
-        if(this.database!=null)
+        if (this.database != null)
             this.database.close();
     }
 }
