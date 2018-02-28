@@ -160,5 +160,13 @@
         <activity
             android:name=".activitys.JUnit4Activity.JUnit4Activity"
             android:screenOrientation="portrait" />
+        <!--自定义控件之折线图-->
+        <activity
+            android:name=".activitys.chartViewActivity.ChartViewActivity"
+            android:screenOrientation="portrait" />
+        <!--RecyclerView-->
+        <activity
+            android:name=".activitys.recyclerViewActivity.RecyclerViewActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

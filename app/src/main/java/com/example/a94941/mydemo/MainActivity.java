@@ -1,5 +1,6 @@
 package com.example.a94941.mydemo;
 
+import android.app.Activity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -7,11 +8,13 @@ import android.view.View;
 import com.example.a94941.mydemo.activitys.JUnit4Activity.JUnit4Activity;
 import com.example.a94941.mydemo.activitys.baiduDemo.BaiduDemoActivity;
 import com.example.a94941.mydemo.activitys.bluetoothDemo.BluetoothDemoActivity;
+import com.example.a94941.mydemo.activitys.chartViewActivity.ChartViewActivity;
 import com.example.a94941.mydemo.activitys.colorViewDemo.ColorViewDemoActivity;
 import com.example.a94941.mydemo.activitys.dateDemo.DateActivity;
 import com.example.a94941.mydemo.activitys.dropDownMenu.DropDownMenuActivity;
 import com.example.a94941.mydemo.activitys.fourLevelLinkage.FourLevelLinkageActivity;
 import com.example.a94941.mydemo.activitys.myView.MyViewActivity;
+import com.example.a94941.mydemo.activitys.recyclerViewActivity.RecyclerViewActivity;
 import com.example.a94941.mydemo.activitys.spinnerDemo.SpinnerActivity;
 import com.example.a94941.mydemo.activitys.superTextView.SuperTextViewActivity;
 import com.example.a94941.mydemo.activitys.superTextViewDemo.SuperTextViewDemoActivity;
@@ -99,6 +102,14 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void goJUnit4Activity(View view) {
         readyGo(JUnit4Activity.class);
+    }
+
+    public void goChartViewActivity(View view) {
+        readyGo(ChartViewActivity.class);
+    }
+
+    public void goRecyclerViewActivity(View view) {
+        readyGo(RecyclerViewActivity.class);
     }
 
     private void initXG() {

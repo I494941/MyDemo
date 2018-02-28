@@ -180,6 +180,28 @@
                 android:text="JUnit4Activity"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_btn_bg"
+                android:onClick="goChartViewActivity"
+                android:padding="10dp"
+                android:text="ChartView"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_btn_bg"
+                android:onClick="goRecyclerViewActivity"
+                android:padding="10dp"
+                android:text="RecyclerView"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
