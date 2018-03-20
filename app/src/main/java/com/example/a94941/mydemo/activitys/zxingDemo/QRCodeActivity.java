@@ -28,7 +28,7 @@ public class QRCodeActivity extends BaseToolbarActivity {
 
     @Override
     protected void initViewsAndEvents() {
-        mTvTitle.setText(R.string.erweima);
+        mTvTitle.setText("智电众安");
     }
 
     @Override
@@ -36,7 +36,8 @@ public class QRCodeActivity extends BaseToolbarActivity {
         super.onResume();
 
         try {
-            Bitmap bitmap = MakeQRCodeUtils.makeQRImage("苍井空闪嫁 曾遭抹黑“终身不孕”崩溃痛哭",
+//            Bitmap bitmap = MakeQRCodeUtils.makeQRImage("苍井空闪嫁 曾遭抹黑“终身不孕”崩溃痛哭",
+            Bitmap bitmap = MakeQRCodeUtils.makeQRImage("http://101.132.44.241:38080/tsingpro.apk",
                     CommonUtils.getScreenWidth(mContext), CommonUtils.getScreenWidth(mContext));
             mIv.setImageBitmap(bitmap);
         } catch (WriterException e) {

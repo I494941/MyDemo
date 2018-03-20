@@ -130,6 +130,10 @@
         <activity
             android:name=".activitys.myView.activity.AuditProgressActivity"
             android:screenOrientation="portrait" />
+        <!--自定义view之自定义时钟-->
+        <activity
+            android:name=".activitys.myView.activity.ClockActivity"
+            android:screenOrientation="portrait" />
 
         <!--信鸽-->
         <!-- YOUR_PACKAGE_PATH.CustomPushReceiver需要改为自己的Receiver： -->

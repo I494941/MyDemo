@@ -28,7 +28,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/audit_progress"
+                android:id="@+id/btn_audit_progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -39,13 +39,13 @@
                 android:textColor="@color/white" />
 
             <Button
-                android:id="@+id/circular_progress"
+                android:id="@+id/btn_clock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/shape_btn_bg"
                 android:padding="10dp"
-                android:text="自定义view之圆环进度条"
+                android:text="自定义view之自定义时钟"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
         </LinearLayout>
