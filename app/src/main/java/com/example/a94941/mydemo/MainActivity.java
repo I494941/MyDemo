@@ -15,6 +15,7 @@ import com.example.a94941.mydemo.activitys.dropDownMenu.DropDownMenuActivity;
 import com.example.a94941.mydemo.activitys.fourLevelLinkage.FourLevelLinkageActivity;
 import com.example.a94941.mydemo.activitys.myView.MyViewActivity;
 import com.example.a94941.mydemo.activitys.recyclerViewActivity.RecyclerViewActivity;
+import com.example.a94941.mydemo.activitys.serviceActivity.ServiceActivity;
 import com.example.a94941.mydemo.activitys.spinnerDemo.SpinnerActivity;
 import com.example.a94941.mydemo.activitys.superTextView.SuperTextViewActivity;
 import com.example.a94941.mydemo.activitys.superTextViewDemo.SuperTextViewDemoActivity;
@@ -110,6 +111,10 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void goRecyclerViewActivity(View view) {
         readyGo(RecyclerViewActivity.class);
+    }
+
+    public void goServiceActivity(View view) {
+        readyGo(ServiceActivity.class);
     }
 
     private void initXG() {

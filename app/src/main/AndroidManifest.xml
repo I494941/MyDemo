@@ -172,5 +172,11 @@
         <activity
             android:name=".activitys.recyclerViewActivity.RecyclerViewActivity"
             android:screenOrientation="portrait" />
+        <!--Service-->
+        <activity
+            android:name=".activitys.serviceActivity.ServiceActivity"
+            android:screenOrientation="portrait" />
+        <service android:name=".activitys.serviceActivity.MyService"/>
+
     </application>
 </manifest>
