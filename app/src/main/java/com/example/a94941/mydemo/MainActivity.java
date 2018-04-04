@@ -17,6 +17,7 @@ import com.example.a94941.mydemo.activitys.myView.MyViewActivity;
 import com.example.a94941.mydemo.activitys.recyclerViewActivity.RecyclerViewActivity;
 import com.example.a94941.mydemo.activitys.serviceActivity.ServiceActivity;
 import com.example.a94941.mydemo.activitys.spinnerDemo.SpinnerActivity;
+import com.example.a94941.mydemo.activitys.stepViewDemo.StepViewActivity;
 import com.example.a94941.mydemo.activitys.superTextView.SuperTextViewActivity;
 import com.example.a94941.mydemo.activitys.superTextViewDemo.SuperTextViewDemoActivity;
 import com.example.a94941.mydemo.activitys.tempControlView.TempControlViewActivity;
@@ -115,6 +116,10 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void goServiceActivity(View view) {
         readyGo(ServiceActivity.class);
+    }
+
+    public void goStepViewActivity(View view) {
+        readyGo(StepViewActivity.class);
     }
 
     private void initXG() {
