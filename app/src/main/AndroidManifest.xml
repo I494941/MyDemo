@@ -176,11 +176,18 @@
         <activity
             android:name=".activitys.serviceActivity.ServiceActivity"
             android:screenOrientation="portrait" />
-        <service android:name=".activitys.serviceActivity.MyService"/>
+        <service android:name=".activitys.serviceActivity.MyService" />
         <!--StepView-->
+        <activity android:name=".activitys.stepViewDemo.StepViewActivity" />
+        <!--android:screenOrientation="landscape" />-->
+        <!--TouchEvent-->
         <activity
-            android:name=".activitys.stepViewDemo.StepViewActivity"
-            android:screenOrientation="landscape" />
+            android:name=".activitys.touchEventDemo.TouchEventActivity"
+            android:screenOrientation="portrait" />
 
+        <!--AndroidView-->
+        <activity
+            android:name=".activitys.androidView.AndroidViewActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

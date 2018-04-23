@@ -61,10 +61,10 @@
                     app:line_length="fixed_length"
                     app:line_stroke_width="1dp"
                     app:line_to_top_margin="18dp"
-                    app:margin="90dp"
+                    app:margin="50dp"
                     app:max_dot_count="5"
                     app:step="one"
-                    app:text_size="12sp"
+                    app:text_size="8sp"
                     app:text_to_bottom_margin="8dp" />
             </LinearLayout>
 
@@ -280,9 +280,9 @@
                     app:count="4"
                     app:line_stroke_width="1dp"
                     app:line_to_top_margin="18dp"
-                    app:margin="90dp"
+                    app:margin="50dp"
                     app:step="five"
-                    app:text_size="12sp"
+                    app:text_size="6sp"
                     app:text_to_bottom_margin="8dp" />
             </LinearLayout>
         </LinearLayout>

@@ -1,11 +1,11 @@
 package com.example.a94941.mydemo;
 
-import android.app.Activity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 
 import com.example.a94941.mydemo.activitys.JUnit4Activity.JUnit4Activity;
+import com.example.a94941.mydemo.activitys.androidView.AndroidViewActivity;
 import com.example.a94941.mydemo.activitys.baiduDemo.BaiduDemoActivity;
 import com.example.a94941.mydemo.activitys.bluetoothDemo.BluetoothDemoActivity;
 import com.example.a94941.mydemo.activitys.chartViewActivity.ChartViewActivity;
@@ -21,6 +21,7 @@ import com.example.a94941.mydemo.activitys.stepViewDemo.StepViewActivity;
 import com.example.a94941.mydemo.activitys.superTextView.SuperTextViewActivity;
 import com.example.a94941.mydemo.activitys.superTextViewDemo.SuperTextViewDemoActivity;
 import com.example.a94941.mydemo.activitys.tempControlView.TempControlViewActivity;
+import com.example.a94941.mydemo.activitys.touchEventDemo.TouchEventActivity;
 import com.example.a94941.mydemo.activitys.viewPagerCards.ViewPagerCardsActivity;
 import com.example.a94941.mydemo.activitys.zxingDemo.ScanActivity;
 import com.example.a94941.mydemo.base.BaseAppManager;
@@ -120,6 +121,14 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void goStepViewActivity(View view) {
         readyGo(StepViewActivity.class);
+    }
+
+    public void goTouchEventActivity(View view) {
+        readyGo(TouchEventActivity.class);
+    }
+
+    public void goAndroidViewActivity(View view) {
+        readyGo(AndroidViewActivity.class);
     }
 
     private void initXG() {

@@ -96,7 +96,7 @@ public class StepViewActivity extends BaseToolbarActivity {
 
     @Override
     protected String getContent() {
-        return "设置横屏，竖屏时字体显示不全";
+        return "可以设置字体大小，间隔，点数，线段长度是否可变，使StepView显示的更加合理";
     }
 
     private void clickableChaged(CheckBox check, final StepView step) {

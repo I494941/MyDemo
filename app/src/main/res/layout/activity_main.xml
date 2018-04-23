@@ -224,6 +224,28 @@
                 android:text="StepView"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_btn_bg"
+                android:onClick="goTouchEventActivity"
+                android:padding="10dp"
+                android:text="TouchEvent"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_btn_bg"
+                android:onClick="goAndroidViewActivity"
+                android:padding="10dp"
+                android:text="AndroidView"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
