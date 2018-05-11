@@ -189,5 +189,16 @@
         <activity
             android:name=".activitys.androidView.AndroidViewActivity"
             android:screenOrientation="portrait" />
+        <!--SpannableString-->
+        <activity
+            android:name=".activitys.SpannableString.SpannableStringActivity"
+            android:screenOrientation="portrait" />
+        <!--Calculator-->
+        <activity
+            android:name=".activitys.Calculator.CalculatorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activitys.Calculator.MyCalculatorActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>
