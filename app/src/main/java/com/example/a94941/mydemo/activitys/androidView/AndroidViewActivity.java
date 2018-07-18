@@ -56,7 +56,7 @@ public class AndroidViewActivity extends BaseToolbarActivity {
                 "\n" +
                 "3、AutoCompleteTextView\n" +
                 "\n" +
-                "4、CalendarView\n" +
+                "4、CalendarViewActivity\n" +
                 "\n" +
                 "5、DatePicker\n" +
                 "\n" +

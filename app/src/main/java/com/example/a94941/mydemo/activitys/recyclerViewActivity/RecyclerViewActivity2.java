@@ -2,7 +2,6 @@ package com.example.a94941.mydemo.activitys.recyclerViewActivity;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import com.example.a94941.mydemo.R;
 import com.example.a94941.mydemo.base.BaseToolbarActivity;
@@ -18,17 +17,13 @@ import butterknife.BindView;
  * @创建时间 2018/2/28
  * @描述 ${TODO}
  */
-public class RecyclerViewActivity extends BaseToolbarActivity {
+public class RecyclerViewActivity2 extends BaseToolbarActivity {
 
     @BindView(R.id.recyclerview)
     RecyclerView mRecyclerView;
-    @BindView(R.id.ll_empty)
-    LinearLayout mLlEmpty;
 
-    private RV2Adapter mAdapter;
-    private List<String> mList = new ArrayList<>();
-
-    private int listSize = 5;
+    private RVAdapter mAdapter;
+    private List<Integer> mList = new ArrayList<>();
 
     @Override
     protected int getContentViewLayoutID() {
@@ -40,8 +35,11 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
         mTvTitle.setText("RecyclerView");
         mIvRight.setVisibility(View.VISIBLE);
 
+        for (int i = 0; i < 5; i++) {
+            mList.add(i );
+        }
+
         initRecyclerView();
-        inidata();
     }
 
     @Override
@@ -53,23 +51,7 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
         mRecyclerView.setNestedScrollingEnabled(false);
         mRecyclerView.setLayoutManager(new AutoLinearLayoutManager(mContext));
 
-        mAdapter = new RV2Adapter(R.layout.item_rv1, mList);
+        mAdapter = new RVAdapter(R.layout.item_rv, mList);
         mRecyclerView.setAdapter(mAdapter);
-    }
-
-    private void inidata() {
-
-        for (int i = 0; i < listSize; i++) {
-            mList.add(i + "");
-        }
-        mAdapter.notifyDataSetChanged();
-
-        if (mList.size() > 0) {
-            mRecyclerView.setVisibility(View.VISIBLE);
-            mLlEmpty.setVisibility(View.GONE);
-        } else {
-            mRecyclerView.setVisibility(View.GONE);
-            mLlEmpty.setVisibility(View.VISIBLE);
-        }
     }
 }

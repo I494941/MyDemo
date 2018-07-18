@@ -200,5 +200,19 @@
         <activity
             android:name=".activitys.Calculator.MyCalculatorActivity"
             android:screenOrientation="portrait" />
+        <!--AmountView-->
+        <activity
+            android:name=".activitys.AmountViewActivity.AmountViewActivity"
+            android:screenOrientation="portrait" />
+        <!--EditTextActivity-->
+        <activity
+            android:name=".activitys.EditTextActivity.EditTextActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <!--日历-->
+        <activity
+            android:name=".activitys.CalendarView.CalendarViewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
     </application>
 </manifest>

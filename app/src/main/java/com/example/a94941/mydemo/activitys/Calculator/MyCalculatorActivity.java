@@ -254,7 +254,7 @@ public class MyCalculatorActivity extends BaseToolbarActivity {
         }
         //先  格式化为十进制普通表示方式 ，取6位
         //再正则显示整数
-        strRes = subZeroAndDot(String.format("%f", Double.parseDouble(strRes)));
+        strRes = subZeroAndDot(strRes);
         strPreRes = strRes;
         hasPreRes = true;
         mEtResult.setText(str1 + strOperator + str2 + "=" + strRes);
@@ -276,6 +276,11 @@ public class MyCalculatorActivity extends BaseToolbarActivity {
      * @return 修改之后的字符串
      */
     public static String subZeroAndDot(String s) {
+
+        //先  格式化为十进制普通表示方式 ，取6位
+        //再正则显示整数
+        s = String.format("%f", Double.parseDouble(s));
+
         if (s.indexOf(".") > 0) {
             s = s.replaceAll("0+?$", "");//去掉多余的0
             s = s.replaceAll("[.]$", "");//如最后一位是.则去掉

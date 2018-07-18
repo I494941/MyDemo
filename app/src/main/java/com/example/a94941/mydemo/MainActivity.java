@@ -4,7 +4,10 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 
+import com.example.a94941.mydemo.activitys.AmountViewActivity.AmountViewActivity;
 import com.example.a94941.mydemo.activitys.Calculator.CalculatorActivity;
+import com.example.a94941.mydemo.activitys.CalendarView.CalendarViewActivity;
+import com.example.a94941.mydemo.activitys.EditTextActivity.EditTextActivity;
 import com.example.a94941.mydemo.activitys.JUnit4Activity.JUnit4Activity;
 import com.example.a94941.mydemo.activitys.SpannableString.SpannableStringActivity;
 import com.example.a94941.mydemo.activitys.androidView.AndroidViewActivity;
@@ -139,6 +142,18 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void goCalculatorActivity(View view) {
         readyGo(CalculatorActivity.class);
+    }
+
+    public void goAmountViewActivity(View view) {
+        readyGo(AmountViewActivity.class);
+    }
+
+    public void goEditTextActivity(View view) {
+        readyGo(EditTextActivity.class);
+    }
+
+    public void goCalendarViewActivity(View view) {
+        readyGo(CalendarViewActivity.class);
     }
 
     private void initXG() {
