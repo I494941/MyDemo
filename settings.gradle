@@ -1,1 +1,1 @@
-include ':app', ':retrofit2_rxjava2', ':zxingnetdemo', ':androidzxing'
+include ':app', ':retrofit2_rxjava2', ':zxingnetdemo', ':androidzxing', ':arcgisapp'

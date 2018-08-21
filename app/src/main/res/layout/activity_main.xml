@@ -301,6 +301,39 @@
                 android:text="CalendarView"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_btn_bg"
+                android:onClick="goSmsActivity"
+                android:padding="10dp"
+                android:text="SmsActivity"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_btn_bg"
+                android:onClick="goSunAnimationViewActivity"
+                android:padding="10dp"
+                android:text="SunAnimationViewActivity"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_btn_bg"
+                android:onClick="goCanvaseActivity"
+                android:padding="10dp"
+                android:text="CanvaseActivity"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

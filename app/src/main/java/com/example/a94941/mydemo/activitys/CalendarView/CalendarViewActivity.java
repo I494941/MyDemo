@@ -78,6 +78,8 @@ public class CalendarViewActivity extends BaseToolbarActivity implements
         int day = mCalendarView.getCurDay();
         //
         schemes.add(getSchemeCalendar(year, month, day, 0xFF40db25, "今"));
+        schemes.add(getSchemeCalendar(year, month, day - 1, 0xFF40db25, "今-1"));
+        schemes.add(getSchemeCalendar(year, month, day - 2, 0xFF40db25, "今-2"));
         mCalendarView.setSchemeDate(schemes);
     }
 

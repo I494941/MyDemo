@@ -1,5 +1,6 @@
 package com.example.a94941.mydemo;
 
+import android.app.Activity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.example.a94941.mydemo.activitys.SpannableString.SpannableStringActivi
 import com.example.a94941.mydemo.activitys.androidView.AndroidViewActivity;
 import com.example.a94941.mydemo.activitys.baiduDemo.BaiduDemoActivity;
 import com.example.a94941.mydemo.activitys.bluetoothDemo.BluetoothDemoActivity;
+import com.example.a94941.mydemo.activitys.canvaseActivity.CanvaseActivity;
 import com.example.a94941.mydemo.activitys.chartViewActivity.ChartViewActivity;
 import com.example.a94941.mydemo.activitys.colorViewDemo.ColorViewDemoActivity;
 import com.example.a94941.mydemo.activitys.dateDemo.DateActivity;
@@ -21,8 +23,11 @@ import com.example.a94941.mydemo.activitys.fourLevelLinkage.FourLevelLinkageActi
 import com.example.a94941.mydemo.activitys.myView.MyViewActivity;
 import com.example.a94941.mydemo.activitys.recyclerViewActivity.RecyclerViewActivity;
 import com.example.a94941.mydemo.activitys.serviceActivity.ServiceActivity;
+import com.example.a94941.mydemo.activitys.smsActivity.SmsActivity;
+import com.example.a94941.mydemo.activitys.smsActivity.SmsActivity1;
 import com.example.a94941.mydemo.activitys.spinnerDemo.SpinnerActivity;
 import com.example.a94941.mydemo.activitys.stepViewDemo.StepViewActivity;
+import com.example.a94941.mydemo.activitys.sunAnimationViewActivity.SunAnimationViewActivity;
 import com.example.a94941.mydemo.activitys.superTextView.SuperTextViewActivity;
 import com.example.a94941.mydemo.activitys.superTextViewDemo.SuperTextViewDemoActivity;
 import com.example.a94941.mydemo.activitys.tempControlView.TempControlViewActivity;
@@ -154,6 +159,18 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void goCalendarViewActivity(View view) {
         readyGo(CalendarViewActivity.class);
+    }
+
+    public void goSmsActivity(View view) {
+        readyGo(SmsActivity.class);
+    }
+
+    public void goSunAnimationViewActivity(View view) {
+        readyGo(SunAnimationViewActivity.class);
+    }
+
+    public void goCanvaseActivity(View view) {
+        readyGo(CanvaseActivity.class);
     }
 
     private void initXG() {

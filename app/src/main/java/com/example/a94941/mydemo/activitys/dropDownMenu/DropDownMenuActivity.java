@@ -30,6 +30,7 @@ public class DropDownMenuActivity extends BaseToolbarActivity {
     DropDownMenu mDropDownMenu;
 
     private String     headers[]  = {"城市", "年龄", "性别", "星座"};
+//    private String     headers[]  = {"星座"};
     private List<View> popupViews = new ArrayList<>();
 
     private GirdDropDownAdapter  cityAdapter;

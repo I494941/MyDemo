@@ -83,7 +83,8 @@ public class CustomMonthView extends MonthView {
         mPointPaint.setTextAlign(Paint.Align.CENTER);
         mPointPaint.setColor(Color.RED);
 
-        mCircleRadius = dipToPx(getContext(), 7);
+//        mCircleRadius = dipToPx(getContext(), 7);//todo
+        mCircleRadius = dipToPx(getContext(), 8);//todo
 
         mPadding = dipToPx(getContext(), 3);
 
@@ -104,7 +105,7 @@ public class CustomMonthView extends MonthView {
     protected boolean onDrawSelected(Canvas canvas, Calendar calendar, int x, int y, boolean hasScheme) {
         int cx = x + mItemWidth / 2;
         int cy = y + mItemHeight / 2;
-        canvas.drawCircle(cx, cy, mRadius, mSelectedPaint);
+        canvas.drawCircle(cx, cy, mRadius, mSchemePaint);
         return true;
     }
 
@@ -134,6 +135,7 @@ public class CustomMonthView extends MonthView {
         if (hasScheme) {
             canvas.drawCircle(x + mItemWidth - mPadding - mCircleRadius / 2, y + mPadding + mCircleRadius, mCircleRadius, mSchemeBasicPaint);
             mTextPaint.setColor(calendar.getSchemeColor());
+            mTextPaint.setTextSize(40);//todo
             canvas.drawText(calendar.getScheme(), x + mItemWidth - mPadding - mCircleRadius, y + mPadding + mSchemeBaseLine, mTextPaint);
         }
 

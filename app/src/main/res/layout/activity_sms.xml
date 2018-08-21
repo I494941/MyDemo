@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:fitsSystemWindows="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:ignore="RtlHardcoded,HardcodedText,RtlSymmetry,SmallSp">
+
+    <include
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/edittext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="你好吗？" />
+
+    <EditText
+        android:id="@+id/edittext2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="电话" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittext1"
+        android:text="转发" />
+</LinearLayout>
