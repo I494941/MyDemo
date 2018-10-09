@@ -1,6 +1,5 @@
 package com.example.a94941.mydemo;
 
-import android.app.Activity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -24,7 +23,6 @@ import com.example.a94941.mydemo.activitys.myView.MyViewActivity;
 import com.example.a94941.mydemo.activitys.recyclerViewActivity.RecyclerViewActivity;
 import com.example.a94941.mydemo.activitys.serviceActivity.ServiceActivity;
 import com.example.a94941.mydemo.activitys.smsActivity.SmsActivity;
-import com.example.a94941.mydemo.activitys.smsActivity.SmsActivity1;
 import com.example.a94941.mydemo.activitys.spinnerDemo.SpinnerActivity;
 import com.example.a94941.mydemo.activitys.stepViewDemo.StepViewActivity;
 import com.example.a94941.mydemo.activitys.sunAnimationViewActivity.SunAnimationViewActivity;
