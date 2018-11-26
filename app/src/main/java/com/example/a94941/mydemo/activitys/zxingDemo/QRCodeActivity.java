@@ -6,7 +6,7 @@ import android.widget.ImageView;
 
 import com.example.a94941.mydemo.R;
 import com.example.a94941.mydemo.base.BaseToolbarActivity;
-import com.example.a94941.mydemo.utils.CommonUtils;
+import com.example.a94941.mydemo.utils.ScreenUtil;
 import com.google.zxing.WriterException;
 
 import butterknife.BindView;
@@ -38,7 +38,7 @@ public class QRCodeActivity extends BaseToolbarActivity {
         try {
 //            Bitmap bitmap = MakeQRCodeUtils.makeQRImage("苍井空闪嫁 曾遭抹黑“终身不孕”崩溃痛哭",
             Bitmap bitmap = MakeQRCodeUtils.makeQRImage("http://101.132.44.241:38080/tsingpro.apk",
-                    CommonUtils.getScreenWidth(mContext), CommonUtils.getScreenWidth(mContext));
+                    ScreenUtil.getWidth(mContext), ScreenUtil.getHeight(mContext));
             mIv.setImageBitmap(bitmap);
         } catch (WriterException e) {
             e.printStackTrace();

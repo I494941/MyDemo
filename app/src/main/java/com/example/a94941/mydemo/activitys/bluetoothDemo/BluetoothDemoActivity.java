@@ -20,7 +20,7 @@ import com.example.a94941.mydemo.R;
 import com.example.a94941.mydemo.activitys.baiduDemo.BleAdapter;
 import com.example.a94941.mydemo.activitys.baiduDemo.BleBean;
 import com.example.a94941.mydemo.base.BaseToolbarActivity;
-import com.example.a94941.mydemo.utils.CommonUtils;
+import com.example.a94941.mydemo.utils.DateUtil;
 import com.example.a94941.mydemo.utils.FileUtils;
 import com.example.a94941.mydemo.utils.LogUtils;
 
@@ -83,7 +83,7 @@ public class BluetoothDemoActivity extends BaseToolbarActivity {
 
     private void search() {
 
-        mBluetoothAdapter.setName(CommonUtils.getTime());
+        mBluetoothAdapter.setName(DateUtil.getTime4());
         mBluetoothAdapter.startDiscovery();
         // 设置广播信息过滤
         IntentFilter filter = new IntentFilter();
@@ -101,7 +101,7 @@ public class BluetoothDemoActivity extends BaseToolbarActivity {
                 if (mBluetoothAdapter.isDiscovering()) {
                     mBluetoothAdapter.cancelDiscovery();
                 }
-                mBluetoothAdapter.setName(CommonUtils.getTime());
+                mBluetoothAdapter.setName(DateUtil.getTime4());
                 mBluetoothAdapter.startDiscovery();
                 break;
             case R.id.btn_claer:
@@ -131,7 +131,7 @@ public class BluetoothDemoActivity extends BaseToolbarActivity {
                     bean.add = device.getAddress();
                     bean.rssi = rssi + "";
                     bean.timeStart = mBluetoothAdapter.getName();
-                    bean.timeEnd = CommonUtils.getTime();
+                    bean.timeEnd = DateUtil.getTime4();
                     mWLJList.add(bean);
                     mWLJAdapter.notifyDataSetChanged();
 
@@ -148,7 +148,7 @@ public class BluetoothDemoActivity extends BaseToolbarActivity {
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
                 //已搜索完成
                 mBluetoothAdapter.cancelDiscovery();
-                mBluetoothAdapter.setName(CommonUtils.getTime());
+                mBluetoothAdapter.setName(DateUtil.getTime4());
                 mBluetoothAdapter.startDiscovery();
             }
         }

@@ -14,7 +14,7 @@ import com.baidu.location.service.LocationService;
 import com.example.a94941.mydemo.R;
 import com.example.a94941.mydemo.app.MyApplication;
 import com.example.a94941.mydemo.base.BaseToolbarActivity;
-import com.example.a94941.mydemo.utils.CommonUtils;
+import com.example.a94941.mydemo.utils.DateUtil;
 import com.example.a94941.mydemo.utils.FileUtils;
 import com.example.a94941.mydemo.utils.ToastUtils;
 
@@ -86,7 +86,7 @@ public class LocationFilterActivity extends BaseToolbarActivity {
                 // 写入文件 TXT
                 String bluetooth = "latitude:" + positionBean.latitude +
                         ",lontitude:" + positionBean.lontitude +
-                        ",time:" + CommonUtils.getTime();
+                        ",time:" + DateUtil.getTime4();
                 FileUtils.writeFileToSDCard(bluetooth.getBytes(), null, fileName, true, true);
             }
         }

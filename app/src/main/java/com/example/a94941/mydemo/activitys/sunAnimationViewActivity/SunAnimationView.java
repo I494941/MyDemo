@@ -14,22 +14,20 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 
 import com.example.a94941.mydemo.R;
-import com.example.a94941.mydemo.utils.CommonUtils;
+import com.example.a94941.mydemo.utils.ScreenUtil;
 
 import java.text.DecimalFormat;
 
 /**
  * Created by wjf on 2018/8/20.
  */
-
 public class SunAnimationView extends View {
 
     private int mWidth; //屏幕宽度
-    private int mHight; //View 高度
+    private int mHeight; //View 高度
     private int marginTop = 20;//离顶部的高度
     private int mCircleColor;  //圆弧颜色
     private int mFontColor;  //字体颜色
@@ -54,7 +52,6 @@ public class SunAnimationView extends View {
     private Paint mPaint3; //画笔  太阳
     private Paint mPaint4; //画笔  阴影
     private RectF mRectF; //半圆弧所在的矩形
-    private WindowManager wm;
 
     //内弧填充渐变
     private Shader shader;
@@ -75,11 +72,10 @@ public class SunAnimationView extends View {
     private void initView(Context context, @Nullable AttributeSet attrs) {
 
         TypedArray type = context.obtainStyledAttributes(attrs, R.styleable.SunAnimationView);
-        mCircleColor = type.getColor(R.styleable.SunAnimationView_sun_circle_color, getContext().getResources().getColor(R.color.red));
-        mFontColor = type.getColor(R.styleable.SunAnimationView_sun_font_color, getContext().getResources().getColor(R.color.green));
-        mPositionColor = type.getColor(R.styleable.SunAnimationView_sun_color, getContext().getResources().getColor(R.color.yellow));
-        mFontSize = type.getDimension(R.styleable.SunAnimationView_sun_font_size, CommonUtils.dp2px(getContext(), 12));
-        mFontSize = CommonUtils.dp2px(getContext(), mFontSize);
+        mCircleColor = type.getColor(R.styleable.SunAnimationView_sun_circle_color, getContext().getResources().getColor(R.color.orange));
+        mFontColor = type.getColor(R.styleable.SunAnimationView_sun_font_color, getContext().getResources().getColor(R.color.orange));
+        mPositionColor = type.getColor(R.styleable.SunAnimationView_sun_color, getContext().getResources().getColor(R.color.gold));
+        mFontSize = type.getDimension(R.styleable.SunAnimationView_sun_font_size, ScreenUtil.dip2px(getContext(), 12));
         type.recycle();
 
         mPaint1 = new Paint();
@@ -93,31 +89,32 @@ public class SunAnimationView extends View {
         mEndTime = endTime;
         mCurrentTime = currentTime;
 
-        mTotalMinute = calculateTime(mStartTime, mEndTime);//计算总时间，单位：分钟
-        mNeedMinute = calculateTime(mStartTime, mCurrentTime);//计算当前所给的时间 单位：分钟
-
-        if (-1 == mNeedMinute) {
+        if (!isTime(mStartTime) || !isTime(mEndTime) || !isTime(mCurrentTime))
+            mPercentage = 0;
+        else if (!(checkTime(mStartTime, mEndTime) == 2) || !(checkTime(mStartTime, mCurrentTime) == 2))
+            mPercentage = 0;
+        else if (!(checkTime(mCurrentTime, mEndTime) == 2))
             mPercentage = 1;
-        } else
+        else {
+            mTotalMinute = calculateTime(mStartTime, mEndTime);//计算总时间，单位：分钟
+            mNeedMinute = calculateTime(mStartTime, mCurrentTime);//计算当前所给的时间 单位：分钟
             mPercentage = Float.parseFloat(formatTime(mTotalMinute, mNeedMinute));//当前时间的总分钟数占日出日落总分钟数的百分比
-        mCurrentAngle = 30 + 120 * mPercentage;
+        }
 
+        mCurrentAngle = 30 + 120 * mPercentage;
         setAnimation(30, mCurrentAngle, 100);
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-
-        //获取SingleTouchView所在父布局的中心点
-        ViewGroup mViewGroup = (ViewGroup) getParent();
-        if (null != mViewGroup) {
-            mWidth = mViewGroup.getWidth();
-        } else {
-            wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
-            mWidth = wm.getDefaultDisplay().getWidth();
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        if (widthMode == MeasureSpec.EXACTLY) {
+            mWidth = widthSize;
         }
         mRadius = mWidth / 2 - 20;
-        mHight = mRadius / 2 + 40;
+        mHeight = mRadius / 2 + 40;
 
         positionXStart = mWidth / 2 - (float) (mRadius * Math.cos((30) * Math.PI / 180));
         positionYStart = mRadius - (float) (mRadius * Math.sin((30) * Math.PI / 180)) + 20;
@@ -128,19 +125,13 @@ public class SunAnimationView extends View {
         positionX = positionXStart;
         positionY = positionYStart;
 
-        setMeasuredDimension(mWidth, mHight);
-    }
-
-    @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        super.onLayout(changed, mWidth / 2 - mRadius, marginTop, mWidth / 2 + mRadius, mRadius + marginTop);
+        setMeasuredDimension(mWidth, mHeight);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         //第一步：画半圆
         drawSemicircle(canvas);
-        canvas.save();
 
         //第二步：绘制太阳的初始位置 以及 后面在动画中不断的更新太阳的X，Y坐标来改变太阳图片在视图中的显示
         drawSunPosition(canvas);
@@ -150,8 +141,6 @@ public class SunAnimationView extends View {
 
         //第三部：绘制图上的文字
         drawFont(canvas);
-
-        super.onDraw(canvas);
     }
 
     /**
@@ -201,7 +190,7 @@ public class SunAnimationView extends View {
 
             mPaint4.setStyle(Paint.Style.FILL_AND_STROKE);
             shader = new LinearGradient(mWidth / 2, marginTop, mWidth / 2, mWidth / 4, mCircleColor,
-                    getResources().getColor(R.color.white), Shader.TileMode.CLAMP);
+                    getResources().getColor(R.color.gray), Shader.TileMode.CLAMP);
             //绘制填充色 onDraw绘制
             mPaint4.setShader(shader);
 
@@ -269,81 +258,79 @@ public class SunAnimationView extends View {
     }
 
     /**
-     * 根据日出和日落时间计算出一天总共的时间:单位为分钟
+     * 根据time1与time2相差的时间:单位为分钟
      *
-     * @param startTime 日出时间
-     * @param endTime   日落时间
+     * @param time1
+     * @param time2
      * @return
      */
-    private float calculateTime(String startTime, String endTime) {
+    private float calculateTime(String time1, String time2) {
 
-        if (1 == checkTime(startTime, endTime)) {
-            String startTimes[] = startTime.split(":");
-            String endTimes[] = endTime.split(":");
+        String startTimes[] = time1.split(":");
+        String endTimes[] = time2.split(":");
 
-            float startHour = Float.parseFloat(startTimes[0]);
-            float startMinute = Float.parseFloat(startTimes[1]);
-
-            float endHour = Float.parseFloat(endTimes[0]);
-            float endMinute = Float.parseFloat(endTimes[1]);
-
-            float needTime = (endHour - startHour - 1) * 60 + (60 - startMinute) + endMinute;
-            return needTime;
-        } else if (2 == checkTime(startTime, endTime)) {
-            return -1;
-        }
-        return 0;
-    }
-
-    /**
-     * 对所给的时间做一下简单的数据校验
-     *
-     * @param startTime
-     * @param endTime
-     * @return 0:早于日出 或时间有误  1:在日出日落之间  2:晚于日落
-     */
-    private int checkTime(String startTime, String endTime) {
-        if (TextUtils.isEmpty(startTime) || TextUtils.isEmpty(endTime)
-                || !startTime.contains(":") || !endTime.contains(":")) {
-            return 0;
-        }
-
-        String startTimes[] = startTime.split(":");
-        String endTimes[] = endTime.split(":");
         float startHour = Float.parseFloat(startTimes[0]);
         float startMinute = Float.parseFloat(startTimes[1]);
 
         float endHour = Float.parseFloat(endTimes[0]);
         float endMinute = Float.parseFloat(endTimes[1]);
 
-        //如果所给的时间(hour)小于日出时间（hour）
-        if ((startHour < Float.parseFloat(mStartTime.split(":")[0]))) {
+        float totalTime = (endHour - startHour) * 60 - startMinute + endMinute;
+        return totalTime;
+    }
+
+    /**
+     * 对所给的时间做一下简单的数据校验
+     *
+     * @param time
+     * @return false:时间有误  true:无误
+     */
+    private boolean isTime(String time) {
+        if (TextUtils.isEmpty(time) || !time.contains(":"))
+            return false;
+
+        String times[] = time.split(":");
+        float hour = Float.parseFloat(times[0]);
+        float minute = Float.parseFloat(times[1]);
+
+        return !(hour < 0 || hour > 23 || minute < 0 || minute > 60);
+    }
+
+    /**
+     * 对所给的时间做一下简单的数据校验
+     *
+     * @param time1
+     * @param time2
+     * @return 0:time2早于time1  1:time1 = time2  2:time2晚于time1
+     */
+    private int checkTime(String time1, String time2) {
+
+        String startTimes[] = time1.split(":");
+        String endTimes[] = time2.split(":");
+
+        float startHour = Float.parseFloat(startTimes[0]);
+        float startMinute = Float.parseFloat(startTimes[1]);
+
+        float endHour = Float.parseFloat(endTimes[0]);
+        float endMinute = Float.parseFloat(endTimes[1]);
+
+        //如果所给的time2时间(hour)小于time1时间（hour）
+        if (startHour > endHour)
             return 0;
-        }
-        //如果所给的时间(hour)大于日落时间（hour）
-        if ((endHour > Float.parseFloat(mEndTime.split(":")[0]))) {
+        //如果所给的time2时间(minute)小于time1时间（minute）
+        if (startHour == endHour && startMinute > endMinute)
+            return 0;
+        //如果所给的time2时间等于time1时间
+        if (startHour == endHour && startMinute == endMinute)
+            return 1;
+        //如果所给的time2时间(minute)大于time1时间(minute)
+        if (startHour == endHour && startMinute < endMinute)
             return 2;
-        }
-
-        //如果所给时间与日出时间：hour相等，minute小于日出时间
-        if ((startHour == Float.parseFloat(mStartTime.split(":")[0]))
-                && (startMinute < Float.parseFloat(mStartTime.split(":")[1]))) {
-            return 0;
-        }
-
-        //如果所给时间与日落时间：hour相等，minute大于日落时间
-        if ((startHour == Float.parseFloat(mEndTime.split(":")[0]))
-                && (endMinute > Float.parseFloat(mEndTime.split(":")[1]))) {
+        //如果所给的time2时间(hour)大于time1时间(hour)
+        if (startHour < endHour)
             return 2;
-        }
 
-        if (startHour < 0 || endHour < 0
-                || startHour > 23 || endHour > 23
-                || startMinute < 0 || endMinute < 0
-                || startMinute > 60 || endMinute > 60) {
-            return 0;
-        }
-        return 1;
+        return 0;
     }
 
     /**

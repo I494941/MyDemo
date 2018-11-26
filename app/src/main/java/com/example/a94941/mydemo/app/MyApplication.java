@@ -59,9 +59,9 @@ public class MyApplication extends Application {
         /***
          * 初始化定位sdk，建议在Application中创建
          */
-        locationService = new LocationService(getApplicationContext());
-        mVibrator = (Vibrator) getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
-        SDKInitializer.initialize(getApplicationContext());
+//        locationService = new LocationService(getApplicationContext());
+//        mVibrator = (Vibrator) getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
+//        SDKInitializer.initialize(getApplicationContext());
     }
 
     /*private void initPublicKey() {

@@ -114,4 +114,9 @@
         <attr name="sun_color" format="color"/>
         <attr name="sun_font_size" format="dimension"/>
     </declare-styleable>
+
+    <declare-styleable name="ArcView">
+        <attr name="arcHeight" format="dimension"/>
+        <attr name="bgColor" format="color"/>
+    </declare-styleable>
 </resources>
