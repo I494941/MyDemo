@@ -3,10 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyDemo.iml" filepath="$PROJECT_DIR$/MyDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/arcgisapp/arcgisapp.iml" filepath="$PROJECT_DIR$/arcgisapp/arcgisapp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mykotlin/mykotlin.iml" filepath="$PROJECT_DIR$/mykotlin/mykotlin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zxingnetdemo/zxingnetdemo.iml" filepath="$PROJECT_DIR$/zxingnetdemo/zxingnetdemo.iml" />
     </modules>
   </component>
 </project>
