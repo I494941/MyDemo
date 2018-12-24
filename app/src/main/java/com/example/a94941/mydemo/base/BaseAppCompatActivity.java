@@ -28,6 +28,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.a94941.mydemo.R;
+import com.example.a94941.mydemo.utils.LogUtils;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import butterknife.ButterKnife;
@@ -64,8 +65,8 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
     }
 
     @Override
-    public void finish() {
-        super.finish();
+    protected void onDestroy() {
+        super.onDestroy();
         if (mUnbinder != null) {
             try {
                 mUnbinder.unbind();
@@ -76,11 +77,6 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
         }
         BaseAppManager.getInstance().removeActivity(this);
         //overridePendingTransition(R.anim.right_in, R.anim.right_out);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
         //RxApiManager.getInstance().cancelAll();
     }
 

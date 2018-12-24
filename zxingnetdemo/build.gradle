@@ -35,5 +35,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     /*zxing*/
-    compile 'cn.yipianfengye.android:zxing-library:2.2'
+    api 'cn.yipianfengye.android:zxing-library:2.2'
 }

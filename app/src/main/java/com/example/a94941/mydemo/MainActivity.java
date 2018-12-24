@@ -9,6 +9,7 @@ import com.example.a94941.mydemo.activitys.Calculator.CalculatorActivity;
 import com.example.a94941.mydemo.activitys.CalendarView.CalendarViewActivity;
 import com.example.a94941.mydemo.activitys.EditTextActivity.EditTextActivity;
 import com.example.a94941.mydemo.activitys.JUnit4Activity.JUnit4Activity;
+import com.example.a94941.mydemo.activitys.Snackbar.SnackbarActivity;
 import com.example.a94941.mydemo.activitys.SpannableString.SpannableStringActivity;
 import com.example.a94941.mydemo.activitys.androidView.AndroidViewActivity;
 import com.example.a94941.mydemo.activitys.baiduDemo.BaiduDemoActivity;
@@ -19,7 +20,9 @@ import com.example.a94941.mydemo.activitys.colorViewDemo.ColorViewDemoActivity;
 import com.example.a94941.mydemo.activitys.dateDemo.DateActivity;
 import com.example.a94941.mydemo.activitys.dropDownMenu.DropDownMenuActivity;
 import com.example.a94941.mydemo.activitys.fourLevelLinkage.FourLevelLinkageActivity;
+import com.example.a94941.mydemo.activitys.jellyToolbar.JellyToolbarActivity;
 import com.example.a94941.mydemo.activitys.myView.MyViewActivity;
+import com.example.a94941.mydemo.activitys.mzBanner.MzBannerActivity;
 import com.example.a94941.mydemo.activitys.recyclerViewActivity.RecyclerViewActivity;
 import com.example.a94941.mydemo.activitys.serviceActivity.ServiceActivity;
 import com.example.a94941.mydemo.activitys.smsActivity.SmsActivity;
@@ -29,6 +32,7 @@ import com.example.a94941.mydemo.activitys.sunAnimationViewActivity.SunAnimation
 import com.example.a94941.mydemo.activitys.superTextView.SuperTextViewActivity;
 import com.example.a94941.mydemo.activitys.superTextViewDemo.SuperTextViewDemoActivity;
 import com.example.a94941.mydemo.activitys.tempControlView.TempControlViewActivity;
+import com.example.a94941.mydemo.activitys.tickview.TickViewActivity;
 import com.example.a94941.mydemo.activitys.touchEventDemo.TouchEventActivity;
 import com.example.a94941.mydemo.activitys.viewPagerCards.ViewPagerCardsActivity;
 import com.example.a94941.mydemo.activitys.zxingDemo.ScanActivity;
@@ -169,6 +173,22 @@ public class MainActivity extends BaseToolbarActivity {
 
     public void goCanvaseActivity(View view) {
         readyGo(CanvaseActivity.class);
+    }
+
+    public void goSnackbarActivity(View view) {
+        readyGo(SnackbarActivity.class);
+    }
+
+    public void goTickViewActivity(View view) {
+        readyGo(TickViewActivity.class);
+    }
+
+    public void goMzBannerActivity(View view) {
+        readyGo(MzBannerActivity.class);
+    }
+
+    public void goJellyToolbarActivity(View view) {
+        readyGo(JellyToolbarActivity.class);
     }
 
     private void initXG() {
